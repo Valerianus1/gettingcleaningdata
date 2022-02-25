@@ -37,3 +37,5 @@ X_y <- cbind(X_merged, y_merged) %>% rename(activity=V1)
 
 # 5. finally, calculate the average of each variable for each combination of subject and activity
 means <-  X_y %>% group_by(activity, subject) %>% summarise_all(mean)
+
+write.table(means, "means_table.txt")
